@@ -1,0 +1,13 @@
+input {
+    outline: none;
+}
+.fa-plus{
+    font-size: large;
+}
+button{
+    background-color: blueviolet;
+    border: none;
+    margin: 10px 10px;
+    border-radius: 2px;
+    color: white;
+}
