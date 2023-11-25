@@ -13,13 +13,11 @@ export function Main(props) {
   
   
 
-  const [loading, setLoading] = useState(false);
-  useEffect(()=>{
-    setLoading(true);
-    setTimeout(()=>{
-      setLoading(false)
-    }, 4000)
-  },[])
+  const [loading, setLoading] = useState(true);
+  // useEffect(()=>{
+  //   setLoading(true);
+    
+  // },[])
 
   useEffect(() => {
     axios
@@ -31,6 +29,12 @@ export function Main(props) {
       .then((response) => {
         setDetails([...response.data["articles"]]);
         SetFilteredDetails([...response.data["articles"]]);
+        setTimeout(()=>{
+          setLoading(false)
+        }, 4000)
+      }).catch((error)=>{
+        alert("Error");
+        setLoading(false)
       })
   }, []);
 
